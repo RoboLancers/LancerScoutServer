@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="LancerScoutServer.jnlp">
+  <information>
+    <title>Lancer Scout Server</title>
+    <vendor>Brian Chen</vendor>
+    <description>LancerScoutServer</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="LancerScoutServer.jar" size="21195" download="eager" />
+    <jar href="bluecove-2.1.2.jar" size="568255" download="eager" />
+    <jar href="gson-2.6.2.jar" size="229650" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="1155" height="820" main-class="main.Main"  name="LancerScoutServer" />
+  <update check="background"/>
+</jnlp>
