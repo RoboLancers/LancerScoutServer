@@ -122,4 +122,12 @@ public class ProcessConnectionThread implements Runnable{
             }
         }
     }
+
+    public InputStream getInputStream() {
+        return inputStream;
+    }
+
+    public OutputStream getOutputStream() {
+        return outputStream;
+    }
 }
