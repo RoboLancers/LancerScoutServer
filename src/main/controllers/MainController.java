@@ -6,12 +6,14 @@ import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
 import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Window;
 import main.Main;
 import main.models.LancerMatch;
@@ -144,37 +146,27 @@ public class MainController {
             }
         });
 
+        addTeamButton.setOnMouseClicked(event -> {
+            Window owner = addTeamButton.getScene().getWindow();
+            String teamName = teamNameField.getText(), teamNumber = teamNumberField.getText();
+
+            if(teamName.isEmpty()){
+                AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!", "Please enter team name");
+                return;
+            }
+
+            if(teamNumber.isEmpty()){
+                AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!", "Please enter team number");
+                return;
+            }
+
+            teams.add(new LancerTeam(teamName, Integer.parseInt(teamNumber)));
+            teamListView.setItems(teams);
+
+            AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Team Successfully Added", teamNumberField.getText() + " " + teamNameField.getText() + " successfully added");
+        });
+
         waitThread = new Thread(new WaitThread());
         waitThread.start();
-    }
-
-    @FXML
-    protected void handleAddTeamButtonAction(ActionEvent event){
-        Window owner = addTeamButton.getScene().getWindow();
-        String teamName = teamNameField.getText(), teamNumber = teamNumberField.getText();
-
-        if(teamName.isEmpty()){
-            AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!", "Please enter team name");
-            return;
-        }
-
-        if(teamNumber.isEmpty()){
-            AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!", "Please enter team number");
-            return;
-        }
-
-        teams.add(new LancerTeam(teamName, Integer.parseInt(teamNumber)));
-        teamListView.setItems(teams);
-
-        if(WaitThread.processConnectionThread != null){
-            try {
-                WaitThread.processConnectionThread.write("ADDTEAM");
-                WaitThread.processConnectionThread.write(0);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Team Successfully Added", teamNumberField.getText() + " " + teamNameField.getText() + " successfully added");
     }
 }
