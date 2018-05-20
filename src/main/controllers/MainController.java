@@ -52,6 +52,8 @@ public class MainController {
 
     public static volatile ObservableMap<Integer, ArrayList<LancerMatch>> teamInfo = FXCollections.observableHashMap();
 
+    public static WaitThread waitThread;
+
     public void initialize(){
         matchListView.getItems().addAll(matchFilteredList);
         teamListView.getItems().addAll(teamFilteredList);
@@ -79,7 +81,11 @@ public class MainController {
                         Optional<ButtonType> result = alert.showAndWait();
 
                         if(result.get() == ButtonType.OK){
-                            teamListView.getItems().removeAll(teamListView.getSelectionModel().getSelectedItems());
+                            ObservableList<LancerTeam> selectedTeams = teamListView.getSelectionModel().getSelectedItems();
+                            for(LancerTeam team : selectedTeams){
+                                teamInfo.remove(team.getTeamNumber());
+                            }
+                            teamListView.getItems().removeAll(selectedTeams);
                             teamListView.getSelectionModel().select(selectedIdx == teamListView.getItems().size() - 1 ? selectedIdx - 1 : selectedIdx);
                         }else{
                             alert.close();
@@ -138,20 +144,27 @@ public class MainController {
 
         addTeamButton.setOnMouseClicked(event -> {
             Window owner = addTeamButton.getScene().getWindow();
-            String teamNumber = teamNumberField.getText();
+            String teamNumberFieldText = teamNumberField.getText();
 
-            if(teamNumber.isEmpty()){
+            if(teamNumberFieldText.isEmpty()){
                 AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!", "Please enter team number");
                 return;
             }
 
-            teams.add(new LancerTeam(Integer.parseInt(teamNumber)));
-            teamListView.setItems(teams);
+            int teamNumber = Integer.parseInt(teamNumberFieldText);
+            if(teamInfo.containsKey(teamNumber)){
+                AlertHelper.showAlert(Alert.AlertType.ERROR, owner,"Form Error", "Team already exists!");
+                return;
+            }
 
-            AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Team Successfully Added", teamNumberField.getText() + " successfully added");
+            teamInfo.put(teamNumber, new ArrayList<>());
+
+            AlertHelper.showAlert(Alert.AlertType.INFORMATION, owner, "Team Successfully Added", teamNumberField.getText() + " successfully added");
+            teamNumberField.clear();
         });
 
-        Thread waitThread = new Thread(new WaitThread());
-        waitThread.start();
+        waitThread = new WaitThread();
+        Thread thread = new Thread(waitThread);
+        thread.start();
     }
 }

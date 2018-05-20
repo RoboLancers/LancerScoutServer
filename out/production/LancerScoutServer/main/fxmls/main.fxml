@@ -49,18 +49,11 @@
                           <rowConstraints>
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="Team Name:" textAlignment="RIGHT" wrapText="true" />
-                              <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="50.0" maxWidth="1.7976931348623157E308" text="Team Number:" textAlignment="RIGHT" wrapText="true" GridPane.rowIndex="1" />
-                              <Button fx:id="addTeamButton" contentDisplay="CENTER" mnemonicParsing="false" text="Add Team" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
-                              <TextField fx:id="teamNameField" promptText="Enter Team Name" GridPane.columnIndex="1">
-                                 <GridPane.margin>
-                                    <Insets left="15.0" right="15.0" />
-                                 </GridPane.margin>
-                              </TextField>
-                              <TextField fx:id="teamNumberField" layoutX="127.0" layoutY="46.0" promptText="Enter Team Number" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="50.0" maxWidth="1.7976931348623157E308" text="Team Number:" textAlignment="RIGHT" wrapText="true" />
+                              <Button fx:id="addTeamButton" contentDisplay="CENTER" mnemonicParsing="false" text="Add Team" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                              <TextField fx:id="teamNumberField" layoutX="127.0" layoutY="46.0" promptText="Enter Team Number" GridPane.columnIndex="1">
                                  <GridPane.margin>
                                     <Insets left="15.0" right="15.0" />
                                  </GridPane.margin>
@@ -98,27 +91,27 @@
             </VBox>
             <TabPane prefHeight="650.0" prefWidth="705.0" tabClosingPolicy="UNAVAILABLE">
               <tabs>
+                <Tab fx:id="detailTeam" text="Team Info">
+                     <content>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="detailTeamName">
+                                 <font>
+                                    <Font size="42.0" />
+                                 </font></Label>
+                              <Label fx:id="detailTeamNumber">
+                                 <font>
+                                    <Font size="27.0" />
+                                 </font></Label>
+                           </children>
+                        </VBox>
+                     </content>
+                </Tab>
                 <Tab text="Matches">
                      <content>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <ListView fx:id="matchListView" prefHeight="726.0" prefWidth="705.0" />
-                           </children>
-                        </VBox>
-                     </content>
-                </Tab>
-                <Tab fx:id="detailTeam" text="Team Info">
-                     <content>
-                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <Label fx:id="detailTeamName" text="Team Name">
-                                 <font>
-                                    <Font size="42.0" />
-                                 </font></Label>
-                              <Label fx:id="detailTeamNumber" text="Team Number">
-                                 <font>
-                                    <Font size="27.0" />
-                                 </font></Label>
                            </children>
                         </VBox>
                      </content>

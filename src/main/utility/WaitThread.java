@@ -2,14 +2,21 @@ package main.utility;
 
 import javax.bluetooth.DiscoveryAgent;
 import javax.bluetooth.LocalDevice;
+import javax.bluetooth.RemoteDevice;
 import javax.bluetooth.UUID;
 import javax.microedition.io.Connector;
 import javax.microedition.io.StreamConnection;
 import javax.microedition.io.StreamConnectionNotifier;
+import java.util.ArrayList;
 
 public class WaitThread implements Runnable{
 
     private ProcessConnectionThread processConnectionThread;
+    private ArrayList<ProcessConnectionThread> connections;
+
+    public WaitThread(){
+        connections = new ArrayList<>();
+    }
 
     @Override
     public void run() {
@@ -40,6 +47,8 @@ public class WaitThread implements Runnable{
                 connection = notifier.acceptAndOpen();
 
                 processConnectionThread = new ProcessConnectionThread(connection);
+                connections.add(processConnectionThread);
+
                 Thread processThread = new Thread(processConnectionThread);
                 processThread.start();
             } catch (Exception e) {
@@ -49,7 +58,11 @@ public class WaitThread implements Runnable{
         }
     }
 
-    public ProcessConnectionThread getProcessConnectionThread() {
+    public ProcessConnectionThread getCurrentProcessConnectionThread() {
         return processConnectionThread;
+    }
+
+    public ArrayList<ProcessConnectionThread> getConnections(){
+        return connections;
     }
 }

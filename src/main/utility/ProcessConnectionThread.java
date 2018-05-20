@@ -2,6 +2,7 @@ package main.utility;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonSyntaxException;
 import javafx.application.Platform;
 import main.controllers.MainController;
 import main.models.LancerMatch;
@@ -75,16 +76,17 @@ public class ProcessConnectionThread implements Runnable{
                     Gson gson = new Gson();
                     LancerMatch lancerMatch = gson.fromJson(json, LancerMatch.class);
 
-                    if(MainController.teamInfo.get(lancerMatch.getTeamNumber()) == null){
+                    if(!MainController.teamInfo.containsKey(lancerMatch.getTeamNumber())){
                         Platform.runLater(() -> MainController.teamInfo.put(lancerMatch.getTeamNumber(), new ArrayList<>(Collections.singletonList(lancerMatch))));
                     }else{
                         Platform.runLater(() -> {
                             ArrayList<LancerMatch> currentMatches = MainController.teamInfo.get(lancerMatch.getTeamNumber());
                             currentMatches.add(lancerMatch);
+                            System.out.println(Arrays.toString(currentMatches.toArray()));
                             MainController.teamInfo.put(lancerMatch.getTeamNumber(), currentMatches);
                         });
                     }
-                } catch (IOException e) {
+                } catch (IOException | JsonSyntaxException e) {
                     e.printStackTrace();
                 }
                 break;
@@ -115,6 +117,7 @@ public class ProcessConnectionThread implements Runnable{
         if(outputStream != null) {
             if (command != null && !command.isEmpty()) {
                 outputStream.write(command.getBytes());
+                outputStream.write(0);
             }
         }
     }

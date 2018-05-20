@@ -6,6 +6,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import main.controllers.MainController;
+import main.utility.ProcessConnectionThread;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class Main extends Application {
 
@@ -16,6 +21,15 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         window = primaryStage;
         primaryStage.setOnCloseRequest(windowEvent -> {
+            try {
+                ArrayList<ProcessConnectionThread> threads = MainController.waitThread.getConnections();
+
+                for(ProcessConnectionThread thread : threads){
+                    thread.write("disconnect");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             Platform.exit();
             System.exit(0);
         });
