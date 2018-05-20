@@ -12,9 +12,6 @@
       <change beforePath="$PROJECT_DIR$/out/production/LancerScoutServer/main/fxmls/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LancerScoutServer/main/fxmls/main.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LancerScoutServer/main/utility/ProcessConnectionThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LancerScoutServer/main/utility/ProcessConnectionThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LancerScoutServer/main/utility/WaitThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LancerScoutServer/main/utility/WaitThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/utility/ProcessConnectionThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/utility/ProcessConnectionThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/utility/WaitThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/utility/WaitThread.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -87,8 +84,8 @@
       <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/controllers/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="162" column="27" lean-forward="true" selection-start-line="162" selection-start-column="27" selection-end-line="162" selection-end-column="27" />
+            <state relative-caret-position="283">
+              <caret line="145" column="13" lean-forward="true" selection-start-line="145" selection-start-column="13" selection-end-line="145" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,11 +93,17 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="main.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/fxmls/main.fxml">
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+          <provider editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file leaf-file-name="WaitThread.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/utility/WaitThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="48" column="9" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+            <state relative-caret-position="187">
+              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#596#597#0" expanded="true" />
@@ -108,6 +111,15 @@
                 <element signature="e#1808#1809#0" expanded="true" />
                 <element signature="e#1854#1855#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProcessConnectionThread.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/utility/ProcessConnectionThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="79" column="26" lean-forward="true" selection-start-line="79" selection-start-column="26" selection-end-line="79" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -165,11 +177,11 @@
         <option value="$PROJECT_DIR$/src/main/models/EndGameAttempt.java" />
         <option value="$PROJECT_DIR$/src/main/models/LancerTeam.java" />
         <option value="$PROJECT_DIR$/src/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/fxmls/main.fxml" />
         <option value="$PROJECT_DIR$/src/main/utility/BluetoothConnectionHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/utility/ProcessConnectionThread.java" />
         <option value="$PROJECT_DIR$/hs_err_pid9072.log" />
         <option value="$PROJECT_DIR$/src/main/utility/WaitThread.java" />
+        <option value="$PROJECT_DIR$/src/main/utility/ProcessConnectionThread.java" />
+        <option value="$PROJECT_DIR$/src/main/fxmls/main.fxml" />
         <option value="$PROJECT_DIR$/src/main/controllers/MainController.java" />
       </list>
     </option>
@@ -379,7 +391,14 @@
       <option name="project" value="LOCAL" />
       <updated>1526760946695</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Remove TeamName from UI">
+      <created>1526776957986</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1526776957986</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -387,7 +406,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -397,12 +415,12 @@
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32461873" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32461873" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Terminal" order="13" weight="0.32893288" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.10554371" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.10554371" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="3" />
@@ -434,7 +452,8 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <MESSAGE value="Fix bug where program was not closing properly" />
     <MESSAGE value="Change addTeamButton to use lambda instead of another method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change addTeamButton to use lambda instead of another method" />
+    <MESSAGE value="Remove TeamName from UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove TeamName from UI" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -623,23 +642,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/utility/ProcessConnectionThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1904">
-          <caret line="127" column="41" lean-forward="true" selection-start-line="127" selection-start-column="41" selection-end-line="127" selection-end-column="41" />
-          <folding>
-            <element signature="e#4094#4095#0" expanded="true" />
-            <element signature="e#4128#4129#0" expanded="true" />
-            <element signature="e#4173#4174#0" expanded="true" />
-            <element signature="e#4208#4209#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/fxmls/main.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/utility/BluetoothConnectionHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -679,10 +681,17 @@
         <state relative-caret-position="-270" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/utility/ProcessConnectionThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="79" column="26" lean-forward="true" selection-start-line="79" selection-start-column="26" selection-end-line="79" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/utility/WaitThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="48" column="9" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+        <state relative-caret-position="187">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#596#597#0" expanded="true" />
@@ -693,10 +702,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/fxmls/main.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="162" column="27" lean-forward="true" selection-start-line="162" selection-start-column="27" selection-end-line="162" selection-end-column="27" />
+        <state relative-caret-position="283">
+          <caret line="145" column="13" lean-forward="true" selection-start-line="145" selection-start-column="13" selection-end-line="145" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
