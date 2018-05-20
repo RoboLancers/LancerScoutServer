@@ -29,13 +29,11 @@ public class ProcessConnectionThread implements Runnable{
     @Override
     public void run() {
         try {
-            //Prepare to receive data
             inputStream = mConnection.openInputStream();
             outputStream = mConnection.openOutputStream();
             System.out.println("Waiting for input");
 
             while (true) {
-                //int command = inputStream.read();
                 byteCommand = readByteArrayCommand(inputStream);
 
                 String command = new String(byteCommand);
@@ -78,9 +76,7 @@ public class ProcessConnectionThread implements Runnable{
                     LancerMatch lancerMatch = gson.fromJson(json, LancerMatch.class);
 
                     if(MainController.teamInfo.get(lancerMatch.getTeamNumber()) == null){
-                        Platform.runLater(() -> {
-                            MainController.teamInfo.put(lancerMatch.getTeamNumber(), new ArrayList<>(Collections.singletonList(lancerMatch)));
-                        });
+                        Platform.runLater(() -> MainController.teamInfo.put(lancerMatch.getTeamNumber(), new ArrayList<>(Collections.singletonList(lancerMatch))));
                     }else{
                         Platform.runLater(() -> {
                             ArrayList<LancerMatch> currentMatches = MainController.teamInfo.get(lancerMatch.getTeamNumber());

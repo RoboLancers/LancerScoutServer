@@ -54,7 +54,7 @@
                            <children>
                               <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="Team Name:" textAlignment="RIGHT" wrapText="true" />
                               <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="50.0" maxWidth="1.7976931348623157E308" text="Team Number:" textAlignment="RIGHT" wrapText="true" GridPane.rowIndex="1" />
-                              <Button fx:id="addTeamButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleAddTeamButtonAction" text="Add Team" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+                              <Button fx:id="addTeamButton" contentDisplay="CENTER" mnemonicParsing="false" text="Add Team" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
                               <TextField fx:id="teamNameField" promptText="Enter Team Name" GridPane.columnIndex="1">
                                  <GridPane.margin>
                                     <Insets left="15.0" right="15.0" />
