@@ -93,4 +93,9 @@ public class LancerMatch {
     public String getComment() {
         return comment;
     }
+
+    @Override
+    public String toString(){
+        return "Match " + getMatchNumber();
+    }
 }

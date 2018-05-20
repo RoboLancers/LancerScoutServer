@@ -14,30 +14,16 @@ import java.util.ArrayList;
 
 public class Main extends Application {
 
-    public static Stage window;
-    public static Scene mainScene;
-
     @Override
     public void start(Stage primaryStage) throws Exception{
-        window = primaryStage;
-        primaryStage.setOnCloseRequest(windowEvent -> {
-            try {
-                ArrayList<ProcessConnectionThread> threads = MainController.waitThread.getConnections();
-
-                for(ProcessConnectionThread thread : threads){
-                    thread.write("disconnect");
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            Platform.exit();
-            System.exit(0);
-        });
+        primaryStage.setOnCloseRequest(windowEvent -> handleClose());
 
         Parent root = FXMLLoader.load(getClass().getResource("fxmls/main.fxml"));
-        mainScene = new Scene(root);
 
-        primaryStage.setScene(mainScene);
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("stylesheet/stylesheet.css").toExternalForm());
+
+        primaryStage.setScene(scene);
         primaryStage.setTitle("Lancer Scout Server");
 
         primaryStage.setWidth(1155);
@@ -50,5 +36,19 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    private void handleClose(){
+        try {
+            ArrayList<ProcessConnectionThread> threads = MainController.waitThread.getConnections();
+
+            for(ProcessConnectionThread thread : threads){
+                thread.write("disconnect");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Platform.exit();
+        System.exit(0);
     }
 }

@@ -6,19 +6,14 @@ import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
 import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Window;
-import main.Main;
 import main.models.LancerMatch;
 import main.models.LancerTeam;
 import main.utility.AlertHelper;
 import main.utility.WaitThread;
 
-import java.io.IOException;
 import java.util.*;
 
 public class MainController {
@@ -33,9 +28,6 @@ public class MainController {
     private ListView<LancerTeam> teamListView;
 
     @FXML
-    private Label detailTeamName;
-
-    @FXML
     private Label detailTeamNumber;
 
     @FXML
@@ -47,23 +39,19 @@ public class MainController {
     private ObservableList<LancerTeam> teams = FXCollections.observableArrayList();
     private FilteredList<LancerTeam> teamFilteredList = new FilteredList<>(teams);
 
-    private ObservableList<LancerMatch> matches = FXCollections.observableArrayList();
-    private FilteredList<LancerMatch> matchFilteredList = new FilteredList<>(matches);
-
-    public static volatile ObservableMap<Integer, ArrayList<LancerMatch>> teamInfo = FXCollections.observableHashMap();
+    public static volatile ObservableMap<Integer, ObservableList<LancerMatch>> teamInfo = FXCollections.observableHashMap();
 
     public static WaitThread waitThread;
 
     public void initialize(){
-        matchListView.getItems().addAll(matchFilteredList);
         teamListView.getItems().addAll(teamFilteredList);
         teamListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+
         teamListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if(newValue != null) {
-                detailTeamName.setText(newValue.getTeamName());
                 detailTeamNumber.setText(String.valueOf(newValue.getTeamNumber()));
+                matchListView.setItems(teamInfo.get(newValue.getTeamNumber()));
             }else{
-                detailTeamName.setText("");
                 detailTeamNumber.setText("");
             }
         });
@@ -117,23 +105,12 @@ public class MainController {
                 LancerMatch match = matchListView.getSelectionModel().getSelectedItem();
 
                 if(match != null){
-                    try {
-                        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxmls/matchDetail.fxml"));
-                        Parent root = fxmlLoader.load();
 
-                        MatchDetailController matchDetailController = fxmlLoader.getController();
-                        matchDetailController.setMatchNumber(match.getMatchNumber());
-
-                        Scene scene = new Scene(root);
-                        Main.window.setScene(scene);
-                    }catch (IOException e){
-                        e.printStackTrace();
-                    }
                 }
             }
         });
 
-        teamInfo.addListener((MapChangeListener<Integer, ArrayList<LancerMatch>>) change -> {
+        teamInfo.addListener((MapChangeListener<Integer, ObservableList<LancerMatch>>) change -> {
             if(change.wasAdded()){
                 if(!teamFilteredList.contains(change.getKey())){
                     teams.add(new LancerTeam(change.getKey()));
@@ -157,7 +134,7 @@ public class MainController {
                 return;
             }
 
-            teamInfo.put(teamNumber, new ArrayList<>());
+            teamInfo.put(teamNumber, FXCollections.observableArrayList());
 
             AlertHelper.showAlert(Alert.AlertType.INFORMATION, owner, "Team Successfully Added", teamNumberField.getText() + " successfully added");
             teamNumberField.clear();

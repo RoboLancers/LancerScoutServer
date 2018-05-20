@@ -4,6 +4,8 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonSyntaxException;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import main.controllers.MainController;
 import main.models.LancerMatch;
 
@@ -77,10 +79,10 @@ public class ProcessConnectionThread implements Runnable{
                     LancerMatch lancerMatch = gson.fromJson(json, LancerMatch.class);
 
                     if(!MainController.teamInfo.containsKey(lancerMatch.getTeamNumber())){
-                        Platform.runLater(() -> MainController.teamInfo.put(lancerMatch.getTeamNumber(), new ArrayList<>(Collections.singletonList(lancerMatch))));
+                        Platform.runLater(() -> MainController.teamInfo.put(lancerMatch.getTeamNumber(), FXCollections.observableArrayList(lancerMatch)));
                     }else{
                         Platform.runLater(() -> {
-                            ArrayList<LancerMatch> currentMatches = MainController.teamInfo.get(lancerMatch.getTeamNumber());
+                            ObservableList<LancerMatch> currentMatches = MainController.teamInfo.get(lancerMatch.getTeamNumber());
                             currentMatches.add(lancerMatch);
                             System.out.println(Arrays.toString(currentMatches.toArray()));
                             MainController.teamInfo.put(lancerMatch.getTeamNumber(), currentMatches);

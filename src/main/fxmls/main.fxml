@@ -95,13 +95,9 @@
                      <content>
                         <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <Label fx:id="detailTeamName">
-                                 <font>
-                                    <Font size="42.0" />
-                                 </font></Label>
                               <Label fx:id="detailTeamNumber">
                                  <font>
-                                    <Font size="27.0" />
+                                    <Font size="42.0" />
                                  </font></Label>
                            </children>
                         </VBox>
@@ -111,6 +107,11 @@
                      <content>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Matches" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="42.0" />
+                                 </font>
+                              </Label>
                               <ListView fx:id="matchListView" prefHeight="726.0" prefWidth="705.0" />
                            </children>
                         </VBox>
