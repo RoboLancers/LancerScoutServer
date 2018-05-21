@@ -37,16 +37,7 @@ public class ProcessConnectionThread implements Runnable{
             System.out.println("Waiting for input");
 
             while (true) {
-                byteCommand = readByteArrayCommand(inputStream);
-
-                String command = new String(byteCommand);
-
-                if (command.equals("")) {
-                    System.out.println("Exit Command Received. Finished");
-                    break;
-                }
-
-                processCommand(command);
+                processCommand(new String(readByteArrayCommand(inputStream)));
             }
         } catch (Exception e) {
             e.printStackTrace();

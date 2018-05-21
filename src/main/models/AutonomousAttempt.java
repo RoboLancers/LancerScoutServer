@@ -15,4 +15,10 @@ public enum AutonomousAttempt {
 
     private String getName(){
         return name;
-    }}
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
+}

@@ -105,7 +105,8 @@ public class MainController {
                 LancerMatch match = matchListView.getSelectionModel().getSelectedItem();
 
                 if(match != null){
-
+                    Window owner = matchListView.getScene().getWindow();
+                    AlertHelper.showMatchAlert(match, owner);
                 }
             }
         });
