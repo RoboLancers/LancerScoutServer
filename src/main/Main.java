@@ -15,6 +15,8 @@ import java.util.ArrayList;
 
 public class Main extends Application {
 
+    public static Scene scene;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         primaryStage.setOnCloseRequest(windowEvent -> handleClose());
@@ -22,7 +24,7 @@ public class Main extends Application {
 
         Parent root = FXMLLoader.load(getClass().getResource("resources/fxml/main.fxml"));
 
-        Scene scene = new Scene(root);
+        scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("resources/stylesheet/stylesheet.css").toExternalForm());
 
         primaryStage.setScene(scene);

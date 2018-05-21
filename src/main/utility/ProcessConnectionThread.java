@@ -6,6 +6,9 @@ import com.google.gson.JsonSyntaxException;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import main.Main;
 import main.controllers.MainController;
 import main.models.LancerMatch;
 
@@ -17,6 +20,7 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Optional;
 
 public class ProcessConnectionThread implements Runnable{
     private StreamConnection mConnection;
@@ -74,8 +78,26 @@ public class ProcessConnectionThread implements Runnable{
                     }else{
                         Platform.runLater(() -> {
                             ObservableList<LancerMatch> currentMatches = MainController.teamInfo.get(lancerMatch.getTeamNumber());
-                            currentMatches.add(lancerMatch);
-                            MainController.teamInfo.put(lancerMatch.getTeamNumber(), currentMatches);
+
+                            if(MainController.teamInfo.get(lancerMatch.getTeamNumber()).contains(lancerMatch)){
+                                LancerMatch duplicate = null;
+
+                                for (LancerMatch match : currentMatches) {
+                                    if(match.equals(lancerMatch)){
+                                        duplicate = match;
+                                    }
+                                }
+
+                                Optional<ButtonType> result = AlertHelper.createDuplicateMatchAlert(duplicate, lancerMatch, Main.scene.getWindow()).showAndWait();
+                                if(result.get() == ButtonType.OK){
+                                    int index = currentMatches.indexOf(lancerMatch);
+                                    currentMatches.remove(lancerMatch);
+                                    currentMatches.add(index, lancerMatch);
+                                }
+                            }else {
+                                currentMatches.add(lancerMatch);
+                                MainController.teamInfo.put(lancerMatch.getTeamNumber(), currentMatches);
+                            }
                         });
                     }
                 } catch (IOException | JsonSyntaxException e) {

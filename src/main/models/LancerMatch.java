@@ -1,5 +1,7 @@
 package main.models;
 
+import java.util.Objects;
+
 public class LancerMatch {
 
     private int matchNumber;
@@ -97,6 +99,24 @@ public class LancerMatch {
     @Override
     public String toString(){
         return "Match " + getMatchNumber();
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == null) {
+            return false;
+        }
+
+        if (this.getClass() != other.getClass()) {
+            return false;
+        }
+
+        return this.matchNumber == ((LancerMatch) other).matchNumber;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(matchNumber, teamNumber, color, startingConfiguration, crossedAutoLine, autonomousAttempt, wrongSideAuto, allianceSwitch, centerScale, opponentSwitch, exchange, endGameAttempt, robotBrokeDown, comment);
     }
 
     public String getMatchInfo(LancerMatch match){
