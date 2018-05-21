@@ -75,7 +75,6 @@ public class ProcessConnectionThread implements Runnable{
                         Platform.runLater(() -> {
                             ObservableList<LancerMatch> currentMatches = MainController.teamInfo.get(lancerMatch.getTeamNumber());
                             currentMatches.add(lancerMatch);
-                            System.out.println(Arrays.toString(currentMatches.toArray()));
                             MainController.teamInfo.put(lancerMatch.getTeamNumber(), currentMatches);
                         });
                     }

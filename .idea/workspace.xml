@@ -73,20 +73,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="167">
               <caret line="20" column="59" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/controllers/MainController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="90" column="51" selection-start-line="90" selection-start-column="51" selection-end-line="90" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -135,17 +123,17 @@
         <option value="$PROJECT_DIR$/src/main/utility/BluetoothConnectionHelper.java" />
         <option value="$PROJECT_DIR$/hs_err_pid9072.log" />
         <option value="$PROJECT_DIR$/src/main/utility/WaitThread.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/fxmls/main.fxml" />
         <option value="$PROJECT_DIR$/src/main/stylesheet/stylesheet.css" />
         <option value="$PROJECT_DIR$/src/main/models/AllianceColor.java" />
-        <option value="$PROJECT_DIR$/src/main/utility/ProcessConnectionThread.java" />
         <option value="$PROJECT_DIR$/src/main/utility/AlertHelper.java" />
         <option value="$PROJECT_DIR$/src/main/models/AutonomousAttempt.java" />
         <option value="$PROJECT_DIR$/src/main/models/EndGameAttempt.java" />
         <option value="$PROJECT_DIR$/src/main/models/LancerMatch.java" />
         <option value="$PROJECT_DIR$/src/main/controllers/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/utility/ProcessConnectionThread.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -188,15 +176,7 @@
               <item name="LancerScoutServer" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LancerScoutServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LancerScoutServer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="drawable" type="462c0819:PsiDirectoryNode" />
+              <item name="utility" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -384,7 +364,14 @@
       <option name="project" value="LOCAL" />
       <updated>1526861113730</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add Icon to App">
+      <created>1526863174873</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1526863174873</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -392,7 +379,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -402,12 +388,12 @@
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32897604" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3278328" />
+      <window_info anchor="bottom" id="Version Control" order="11" visible="true" weight="0.32893288" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3278328" />
       <window_info anchor="bottom" id="Terminal" order="13" weight="0.3278867" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.22100656" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.22100656" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3278867" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -443,7 +429,9 @@
     <MESSAGE value="Tell clients that app is disconnecting" />
     <MESSAGE value="Shows matches for teams" />
     <MESSAGE value="Show match detail when double clicked on" />
-    <option name="LAST_COMMIT_MESSAGE" value="Show match detail when double clicked on" />
+    <MESSAGE value="Add Icon to App" />
+    <MESSAGE value="Actually add icon to app" />
+    <option name="LAST_COMMIT_MESSAGE" value="Actually add icon to app" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -559,13 +547,6 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/jshell/jshell_console.snippet">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="5" lean-forward="true" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/controllers/MatchDetailController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -663,8 +644,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/utility/ProcessConnectionThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="46" column="7" lean-forward="true" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
+        <state relative-caret-position="89">
+          <caret line="76" column="60" selection-start-line="76" selection-start-column="60" selection-end-line="76" selection-end-column="60" />
         </state>
       </provider>
     </entry>
@@ -678,9 +659,12 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
+        <state relative-caret-position="167">
           <caret line="20" column="59" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />

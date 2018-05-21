@@ -5,6 +5,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import main.controllers.MainController;
 import main.utility.ProcessConnectionThread;
@@ -17,11 +18,12 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         primaryStage.setOnCloseRequest(windowEvent -> handleClose());
+        primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("resources/drawable/Logo.jpg")));
 
-        Parent root = FXMLLoader.load(getClass().getResource("fxmls/main.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("resources/fxml/main.fxml"));
 
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("stylesheet/stylesheet.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("resources/stylesheet/stylesheet.css").toExternalForm());
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("Lancer Scout Server");
