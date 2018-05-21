@@ -11,19 +11,8 @@
       <change beforePath="$PROJECT_DIR$/out/artifacts/LancerScoutServer/LancerScoutServer.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LancerScoutServer/LancerScoutServer.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/LancerScoutServer/LancerScoutServer.jnlp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LancerScoutServer/LancerScoutServer.jnlp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LancerScoutServer/main/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LancerScoutServer/main/controllers/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LancerScoutServer/main/models/AutonomousAttempt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LancerScoutServer/main/models/AutonomousAttempt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LancerScoutServer/main/models/EndGameAttempt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LancerScoutServer/main/models/EndGameAttempt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LancerScoutServer/main/models/LancerMatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LancerScoutServer/main/models/LancerMatch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LancerScoutServer/main/models/SingleMatch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LancerScoutServer/main/utility/AlertHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LancerScoutServer/main/utility/AlertHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LancerScoutServer/main/utility/ProcessConnectionThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LancerScoutServer/main/utility/ProcessConnectionThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/models/AutonomousAttempt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/models/AutonomousAttempt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/models/EndGameAttempt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/models/EndGameAttempt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/models/LancerMatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/models/LancerMatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/models/SingleMatch.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/utility/AlertHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/utility/AlertHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/utility/ProcessConnectionThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/utility/ProcessConnectionThread.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -81,20 +70,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AlertHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/utility/AlertHelper.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/controllers/MainController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="110" column="13" lean-forward="true" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
+            <state relative-caret-position="102">
+              <caret line="20" column="59" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,56 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AutonomousAttempt.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/models/AutonomousAttempt.java">
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/controllers/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EndGameAttempt.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/models/EndGameAttempt.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StartingConfiguration.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/models/StartingConfiguration.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LancerMatch.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/models/LancerMatch.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="141" column="51" selection-start-line="141" selection-start-column="51" selection-end-line="141" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProcessConnectionThread.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/utility/ProcessConnectionThread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="34" column="15" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WaitThread.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/utility/WaitThread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="47" selection-start-line="47" selection-end-line="47" />
+            <state relative-caret-position="192">
+              <caret line="90" column="51" selection-start-line="90" selection-start-column="51" selection-end-line="90" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -203,21 +138,20 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/fxmls/main.fxml" />
         <option value="$PROJECT_DIR$/src/main/stylesheet/stylesheet.css" />
-        <option value="$PROJECT_DIR$/src/main/Main.java" />
         <option value="$PROJECT_DIR$/src/main/models/AllianceColor.java" />
         <option value="$PROJECT_DIR$/src/main/utility/ProcessConnectionThread.java" />
         <option value="$PROJECT_DIR$/src/main/utility/AlertHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/models/AutonomousAttempt.java" />
         <option value="$PROJECT_DIR$/src/main/models/EndGameAttempt.java" />
         <option value="$PROJECT_DIR$/src/main/models/LancerMatch.java" />
+        <option value="$PROJECT_DIR$/src/main/controllers/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/Main.java" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -254,28 +188,15 @@
               <item name="LancerScoutServer" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LancerScoutServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="LancerScoutServer" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="fxmls" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LancerScoutServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LancerScoutServer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LancerScoutServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LancerScoutServer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="utility" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="drawable" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -303,13 +224,14 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\brian\Desktop\Projects\LancerScoutServer\src\main\models" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\brian\Desktop\Projects\LancerScoutServer\src\main\resources\drawable" />
       <recent name="C:\Users\brian\Desktop\Projects\LancerScoutServer\lib" />
       <recent name="C:\Users\brian\Desktop\Projects\LancerScoutServer\src\main\fxml" />
       <recent name="C:\Users\brian\Desktop\Projects\LancerScoutServer\src\main" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\brian\Desktop\Projects\LancerScoutServer\src\main\models" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -455,14 +377,22 @@
       <option name="project" value="LOCAL" />
       <updated>1526858678069</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Show match detail when double clicked on">
+      <created>1526861113730</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1526861113730</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="1302000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -473,11 +403,11 @@
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="5" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32897604" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32461873" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3278328" />
       <window_info anchor="bottom" id="Terminal" order="13" weight="0.3278867" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.1076759" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.22100656" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3278867" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -512,7 +442,8 @@
     <MESSAGE value="Remove TeamName from UI" />
     <MESSAGE value="Tell clients that app is disconnecting" />
     <MESSAGE value="Shows matches for teams" />
-    <option name="LAST_COMMIT_MESSAGE" value="Shows matches for teams" />
+    <MESSAGE value="Show match detail when double clicked on" />
+    <option name="LAST_COMMIT_MESSAGE" value="Show match detail when double clicked on" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -660,21 +591,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/fxmls/main.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/main.fxml">
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="23" column="103" selection-start-line="23" selection-start-column="103" selection-end-line="23" selection-end-column="103" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/stylesheet/stylesheet.css">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/stylesheet/stylesheet.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
@@ -699,16 +620,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="47" selection-start-line="47" selection-end-line="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="110" column="13" lean-forward="true" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -752,8 +663,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/utility/ProcessConnectionThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="34" column="15" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="15" />
+        <state relative-caret-position="395">
+          <caret line="46" column="7" lean-forward="true" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="90" column="51" selection-start-line="90" selection-start-column="51" selection-end-line="90" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="20" column="59" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

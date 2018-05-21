@@ -91,7 +91,7 @@ public class MainController {
         searchTeamField.textProperty().addListener((observable, oldValue, newValue) -> {
             teamFilteredList.setPredicate(team -> {
                 if(newValue != null && !newValue.isEmpty()){
-                    return team.getTeamName().toLowerCase().contains(newValue.toLowerCase());
+                    return String.valueOf(team.getTeamNumber()).contains(newValue);
                 }else{
                     return true;
                 }
