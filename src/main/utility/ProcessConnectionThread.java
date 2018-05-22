@@ -24,7 +24,6 @@ import java.util.Optional;
 
 public class ProcessConnectionThread implements Runnable{
     private StreamConnection mConnection;
-    private byte[] byteCommand;
 
     private InputStream inputStream;
     private OutputStream outputStream;
@@ -41,7 +40,14 @@ public class ProcessConnectionThread implements Runnable{
             System.out.println("Waiting for input");
 
             while (true) {
-                processCommand(new String(readByteArrayCommand(inputStream)));
+                String data = new String(readByteArrayCommand(inputStream));
+
+                if(data.equals("")){
+                    System.out.println("Exit");
+                    break;
+                }
+
+                processCommand(data);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -61,14 +67,22 @@ public class ProcessConnectionThread implements Runnable{
 
     /**
      * Process the command from client
-     * @param command the command code
+     * @param data the data
      */
-    private void processCommand(String command) {
+    private void processCommand(String data) {
+
+        String command = "";
+
+        if(data.length() > 5){
+            if(data.substring(0, 5).equals("MATCH")){
+                command = data.substring(0, 5);
+            }
+        }
+
         switch (command) {
             case "MATCH":
                 try {
-                    byteCommand = readByteArrayCommand(inputStream);
-                    String json = new String(byteCommand);
+                    String json = data.substring(5, data.length());
                     System.out.println(json);
                     Gson gson = new Gson();
                     LancerMatch lancerMatch = gson.fromJson(json, LancerMatch.class);
@@ -100,12 +114,12 @@ public class ProcessConnectionThread implements Runnable{
                             }
                         });
                     }
-                } catch (IOException | JsonSyntaxException e) {
+                } catch (JsonSyntaxException e) {
                     e.printStackTrace();
                 }
                 break;
             default:
-                System.out.println("Received " + command);
+                System.out.println("Received " + data);
         }
     }
 

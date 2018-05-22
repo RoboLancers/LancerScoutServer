@@ -61,7 +61,6 @@ public class MainController {
                     final int selectedIdx = teamListView.getSelectionModel().getSelectedIndex();
 
                     if(selectedIdx != -1) {
-
                         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                         alert.setTitle("Delete");
                         alert.setHeaderText(null);

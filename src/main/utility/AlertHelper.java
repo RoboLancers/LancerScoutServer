@@ -106,13 +106,21 @@ public class AlertHelper {
             match2Difference += "Comments: " + match2.getComment() + "\n";
         }
 
-        match1Label.setText(match1Difference);
-        match2Label.setText(match2Difference);
+        if(match1Difference.isEmpty() && match2Difference.isEmpty()){
+            match1Label.setText("Everything is the same");
+            match1Label.setPadding(new Insets(20));
 
-        match1Label.setPadding(new Insets(20));
-        match2Label.setPadding(new Insets(20));
+            dialogPaneContent.getChildren().addAll(match1Label);
+        }else{
+            match1Label.setText(match1Difference);
+            match2Label.setText(match2Difference);
 
-        dialogPaneContent.getChildren().addAll(match1Label, match2Label);
+            match1Label.setPadding(new Insets(20));
+            match2Label.setPadding(new Insets(20));
+
+            dialogPaneContent.getChildren().addAll(match1Label, match2Label);
+        }
+
         alert.getDialogPane().setContent(dialogPaneContent);
 
         alert.initOwner(owner);
