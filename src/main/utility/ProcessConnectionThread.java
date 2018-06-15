@@ -91,9 +91,10 @@ public class ProcessConnectionThread implements Runnable{
                         Platform.runLater(() -> MainController.teamInfo.put(lancerMatch.getTeamNumber(), FXCollections.observableArrayList(lancerMatch)));
                     }else{
                         Platform.runLater(() -> {
-                            ObservableList<LancerMatch> currentMatches = MainController.teamInfo.get(lancerMatch.getTeamNumber());
+                            //ObservableList<LancerMatch> currentMatches = MainController.teamInfo.get(lancerMatch.getTeamNumber());
+                            ObservableList<LancerMatch> currentMatches = MainController.teamInfo.remove(lancerMatch.getTeamNumber());
 
-                            if(MainController.teamInfo.get(lancerMatch.getTeamNumber()).contains(lancerMatch)){
+                            if(currentMatches.contains(lancerMatch)){
                                 LancerMatch duplicate = null;
 
                                 for (LancerMatch match : currentMatches) {
@@ -108,6 +109,8 @@ public class ProcessConnectionThread implements Runnable{
                                     currentMatches.remove(lancerMatch);
                                     currentMatches.add(index, lancerMatch);
                                 }
+
+                                MainController.teamInfo.put(lancerMatch.getTeamNumber(), currentMatches);
                             }else {
                                 currentMatches.add(lancerMatch);
                                 MainController.teamInfo.put(lancerMatch.getTeamNumber(), currentMatches);

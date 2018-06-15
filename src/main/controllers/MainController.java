@@ -36,12 +36,36 @@ public class MainController {
     @FXML
     private ListView<LancerMatch> matchListView;
 
-    private ObservableList<LancerTeam> teams = FXCollections.observableArrayList();
-    private FilteredList<LancerTeam> teamFilteredList = new FilteredList<>(teams);
+    @FXML
+    private Label teamSummaryTotalMatches;
+
+    @FXML
+    private Label allianceSwitchAverage;
+
+    @FXML
+    private Label centerScaleAverage;
+
+    @FXML
+    private Label opponentSwitchAverage;
+
+    @FXML
+    private Label exchangeAverage;
+
+    @FXML
+    private Label crossAutoLinePercent;
+
+    @FXML
+    private Label robotBrokeDownPercent;
+
+    @FXML
+    private Label wrongSideAutoPercent;
+
+    public volatile ObservableList<LancerTeam> teams = FXCollections.observableArrayList();
+    public volatile FilteredList<LancerTeam> teamFilteredList = new FilteredList<>(teams);
 
     public static volatile ObservableMap<Integer, ObservableList<LancerMatch>> teamInfo = FXCollections.observableHashMap();
 
-    public static WaitThread waitThread;
+    private static boolean ran = false;
 
     public void initialize(){
         teamListView.getItems().addAll(teamFilteredList);
@@ -49,10 +73,19 @@ public class MainController {
 
         teamListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if(newValue != null) {
-                detailTeamNumber.setText(String.valueOf(newValue.getTeamNumber()));
-                matchListView.setItems(teamInfo.get(newValue.getTeamNumber()));
+                updateTeamSummary(newValue);
             }else{
                 detailTeamNumber.setText("");
+                teamSummaryTotalMatches.setText("");
+
+                allianceSwitchAverage.setText("");
+                centerScaleAverage.setText("");
+                opponentSwitchAverage.setText("");
+                exchangeAverage.setText("");
+
+                crossAutoLinePercent.setText("");
+                robotBrokeDownPercent.setText("");
+                wrongSideAutoPercent.setText("");
             }
         });
 
@@ -67,7 +100,7 @@ public class MainController {
                         alert.setContentText("Are you sure you want to delete");
                         Optional<ButtonType> result = alert.showAndWait();
 
-                        if(result.get() == ButtonType.OK){
+                        if(result.isPresent() && result.get() == ButtonType.OK){
                             ObservableList<LancerTeam> selectedTeams = teamListView.getSelectionModel().getSelectedItems();
                             for(LancerTeam team : selectedTeams){
                                 teamInfo.remove(team.getTeamNumber());
@@ -111,10 +144,25 @@ public class MainController {
         });
 
         teamInfo.addListener((MapChangeListener<Integer, ObservableList<LancerMatch>>) change -> {
-            if(change.wasAdded()){
-                if(!teamFilteredList.contains(change.getKey())){
+            LancerTeam team = null;
+
+            for(LancerTeam currentTeam : teams){
+                if(currentTeam.getTeamNumber() == change.getKey()){
+                    team = currentTeam;
+                }
+            }
+
+            if (change.wasAdded()) {
+                if (!teamFilteredList.contains(team)) {
                     teams.add(new LancerTeam(change.getKey()));
                     teamListView.setItems(teams);
+                }
+            } else if (change.wasRemoved()) {
+                if(team != null) {
+                    if (teamFilteredList.contains(team)) {
+                        teams.remove(team);
+                        teamListView.setItems(teams);
+                    }
                 }
             }
         });
@@ -140,8 +188,57 @@ public class MainController {
             teamNumberField.clear();
         });
 
-        waitThread = new WaitThread();
-        Thread thread = new Thread(waitThread);
-        thread.start();
+        if(!ran) {
+            WaitThread waitThread = new WaitThread();
+            Thread thread = new Thread(waitThread);
+            thread.start();
+
+            ran = true;
+        }
+    }
+
+    private void updateTeamSummary(LancerTeam newValue){
+        int matchSize = teamInfo.get(newValue.getTeamNumber()).size();
+
+        detailTeamNumber.setText(String.valueOf(newValue.getTeamNumber()));
+        teamSummaryTotalMatches.setText(String.valueOf(matchSize));
+        matchListView.setItems(teamInfo.get(newValue.getTeamNumber()));
+
+        double allianceSwitch = 0, centerScale = 0, opponentSwitch = 0, exchange = 0, crossAutoLine = 0, robotBrokeDown = 0, wrongSideAuto = 0;
+
+        if(matchSize > 0) {
+            for(LancerMatch match : teamInfo.get(newValue.getTeamNumber())){
+                allianceSwitch += match.getAllianceSwitch();
+                centerScale += match.getCenterScale();
+                opponentSwitch += match.getOpponentSwitch();
+                exchange += match.getExchange();
+
+                crossAutoLine += match.getCrossedAutoLine() ? 1 : 0;
+                robotBrokeDown += match.getRobotBrokeDown() ? 1 : 0;
+                wrongSideAuto += match.getWrongSideAuto() ? 1 : 0;
+            }
+
+            allianceSwitch /= matchSize;
+            centerScale /= matchSize;
+            opponentSwitch /= matchSize;
+            exchange /= matchSize;
+
+            crossAutoLine /= matchSize;
+            robotBrokeDown /= matchSize;
+            wrongSideAuto /= matchSize;
+
+            crossAutoLine *= 100;
+            robotBrokeDown *= 100;
+            wrongSideAuto *= 100;
+        }
+
+        allianceSwitchAverage.setText(String.format("%.2f", allianceSwitch));
+        centerScaleAverage.setText(String.format("%.2f", centerScale));
+        opponentSwitchAverage.setText(String.format("%.2f", opponentSwitch));
+        exchangeAverage.setText(String.format("%.2f", exchange));
+
+        crossAutoLinePercent.setText(String.format("%.2f%s", crossAutoLine, "%"));
+        robotBrokeDownPercent.setText(String.format("%.2f%s", robotBrokeDown, "%"));
+        wrongSideAutoPercent.setText(String.format("%.2f%s", wrongSideAuto, "%"));
     }
 }

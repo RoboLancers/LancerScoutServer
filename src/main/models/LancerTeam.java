@@ -1,5 +1,7 @@
 package main.models;
 
+import java.util.Objects;
+
 public class LancerTeam {
 
     private String teamName;
@@ -26,5 +28,23 @@ public class LancerTeam {
     @Override
     public String toString(){
         return teamName + " " + teamNumber;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == null) {
+            return false;
+        }
+
+        if (this.getClass() != other.getClass()) {
+            return false;
+        }
+
+        return this.teamNumber == ((LancerTeam) other).teamNumber;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(teamNumber);
     }
 }
