@@ -60,12 +60,12 @@ public class MainController {
     @FXML
     private Label wrongSideAutoPercent;
 
-    public volatile ObservableList<LancerTeam> teams = FXCollections.observableArrayList();
-    public volatile FilteredList<LancerTeam> teamFilteredList = new FilteredList<>(teams);
+    public static volatile ObservableList<LancerTeam> teams = FXCollections.observableArrayList();
+    public static volatile FilteredList<LancerTeam> teamFilteredList = new FilteredList<>(teams);
 
     public static volatile ObservableMap<Integer, ObservableList<LancerMatch>> teamInfo = FXCollections.observableHashMap();
 
-    private static boolean ran = false;
+    public static WaitThread waitThread;
 
     public void initialize(){
         teamListView.getItems().addAll(teamFilteredList);
@@ -188,12 +188,10 @@ public class MainController {
             teamNumberField.clear();
         });
 
-        if(!ran) {
-            WaitThread waitThread = new WaitThread();
+        if(waitThread == null) {
+            waitThread = new WaitThread();
             Thread thread = new Thread(waitThread);
             thread.start();
-
-            ran = true;
         }
     }
 

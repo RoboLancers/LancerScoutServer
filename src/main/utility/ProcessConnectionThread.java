@@ -91,7 +91,6 @@ public class ProcessConnectionThread implements Runnable{
                         Platform.runLater(() -> MainController.teamInfo.put(lancerMatch.getTeamNumber(), FXCollections.observableArrayList(lancerMatch)));
                     }else{
                         Platform.runLater(() -> {
-                            //ObservableList<LancerMatch> currentMatches = MainController.teamInfo.get(lancerMatch.getTeamNumber());
                             ObservableList<LancerMatch> currentMatches = MainController.teamInfo.remove(lancerMatch.getTeamNumber());
 
                             if(currentMatches.contains(lancerMatch)){
