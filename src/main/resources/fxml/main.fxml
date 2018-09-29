@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -11,6 +12,7 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -20,16 +22,13 @@
 
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.MainController">
    <children>
-      <MenuBar prefHeight="25.0" prefWidth="1052.0" VBox.vgrow="NEVER">
+      <MenuBar>
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+                  <MenuItem fx:id="menuOpen" mnemonicParsing="false" text="Open" />
+                  <MenuItem fx:id="menuSave" mnemonicParsing="false" text="Save" />
+              <MenuItem fx:id="menuClose" mnemonicParsing="false" text="Close" />
             </items>
           </Menu>
         </menus>
@@ -38,7 +37,7 @@
          <children>
             <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="420.0" spacing="10.0" HBox.hgrow="NEVER">
                <children>
-                  <TitledPane alignment="BOTTOM_CENTER" animated="false" collapsible="false" contentDisplay="BOTTOM" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" text="Add Teams" textAlignment="CENTER" underline="true">
+                  <TitledPane alignment="BOTTOM_CENTER" animated="false" collapsible="false" contentDisplay="BOTTOM" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" text="Upload Pictures" textAlignment="CENTER" underline="true">
                      <graphic>
                         <GridPane alignment="CENTER" prefHeight="289.0" prefWidth="311.0">
                           <columnConstraints>
@@ -47,16 +46,18 @@
                           </columnConstraints>
                           <rowConstraints>
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
                               <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="50.0" maxWidth="1.7976931348623157E308" text="Team Number:" textAlignment="RIGHT" wrapText="true" />
-                              <Button fx:id="addTeamButton" contentDisplay="CENTER" mnemonicParsing="false" text="Add Team" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                              <Button fx:id="uploadPicturesButton" contentDisplay="CENTER" mnemonicParsing="false" text="Upload" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
                               <TextField fx:id="teamNumberField" layoutX="127.0" layoutY="46.0" promptText="Enter Team Number" GridPane.columnIndex="1">
                                  <GridPane.margin>
                                     <Insets left="15.0" right="15.0" />
                                  </GridPane.margin>
                               </TextField>
+                              <Button fx:id="imageChooserButton" mnemonicParsing="false" text="Choose Image" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                      </graphic>
@@ -74,7 +75,8 @@
                   </TitledPane>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <TextField fx:id="searchTeamField" alignment="CENTER" prefHeight="31.0" prefWidth="428.0" promptText="Team Name Or Number To Search" />
+                        <TextField fx:id="searchTeamField" alignment="CENTER" prefHeight="36.0" prefWidth="210.0" promptText="Team Number To Search" />
+                        <JFXButton fx:id="sortByButton" prefHeight="40.0" prefWidth="215.0" text="Sort By" />
                      </children>
                   </HBox>
                </children>
@@ -95,6 +97,11 @@
                                  <VBox.margin>
                                     <Insets bottom="50.0" />
                                  </VBox.margin></Label>
+                              <Label text="Match Info">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
                               <HBox prefHeight="20.0" prefWidth="705.0">
                                  <children>
                                     <Label alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" prefHeight="20.0" prefWidth="382.0" text="Total Matches: " />
@@ -131,6 +138,44 @@
                                     <Label fx:id="wrongSideAutoPercent" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                                  </children>
                               </GridPane>
+                              <Label text="Pit Info">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <GridPane>
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="30.0" prefWidth="379.0" text="Drivetrain: " textAlignment="RIGHT" />
+                                    <Label fx:id="drivetrainLabel" contentDisplay="RIGHT" prefHeight="30.0" prefWidth="421.0" GridPane.columnIndex="1" />
+                                    <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="30.0" prefWidth="365.0" text="Cube Intake: " GridPane.rowIndex="1" />
+                                    <Label fx:id="cubeIntakeLabel" contentDisplay="RIGHT" prefHeight="30.0" prefWidth="440.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="30.0" prefWidth="483.0" text="Climb: " GridPane.rowIndex="2" />
+                                    <Label fx:id="climbLabel" contentDisplay="RIGHT" prefHeight="37.0" prefWidth="352.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="30.0" prefWidth="475.0" text="Robot Weight: " GridPane.rowIndex="3" />
+                                    <Label fx:id="robotWeightLabel" contentDisplay="RIGHT" prefHeight="30.0" prefWidth="385.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="30.0" prefWidth="377.0" text="Programming Language: " GridPane.rowIndex="4" />
+                                    <Label fx:id="programmingLanguageLabel" contentDisplay="RIGHT" prefHeight="30.0" prefWidth="379.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                 </children>
+                              </GridPane>
+                              <ImageView fx:id="robotImage" fitHeight="186.0" fitWidth="215.0" pickOnBounds="true" preserveRatio="true">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </ImageView>
                            </children>
                         </VBox>
                      </content>

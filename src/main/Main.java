@@ -3,8 +3,6 @@ package main;
 import com.google.gson.Gson;
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.collections.ObservableList;
-import javafx.collections.ObservableMap;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,13 +11,13 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import main.controllers.MainController;
 import main.utility.AlertHelper;
 import org.controlsfx.control.Notifications;
 
 import java.io.*;
 import java.util.Optional;
-import java.util.Scanner;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -27,14 +25,27 @@ import java.util.concurrent.TimeUnit;
 public class Main extends Application {
 
     public static Scene scene;
-    private Gson gson = new Gson();
+    private static Gson gson = new Gson();
+
+    private double xOffset = 0;
+    private double yOffset = 0;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        primaryStage.setOnCloseRequest(this::handleClose);
+        primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.setOnCloseRequest(Main::handleClose);
         primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("resources/drawable/Logo.jpg")));
 
         Parent root = FXMLLoader.load(getClass().getResource("resources/fxml/main.fxml"));
+
+        root.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+        root.setOnMouseDragged(event -> {
+            primaryStage.setX(event.getScreenX() - xOffset);
+            primaryStage.setY(event.getScreenY() - yOffset);
+        });
 
         scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("resources/stylesheet/stylesheet.css").toExternalForm());
@@ -56,10 +67,10 @@ public class Main extends Application {
         launch(args);
     }
 
-    private void handleClose(Event windowEvent){
+    public static void handleClose(Event windowEvent){
         Optional<ButtonType> result = AlertHelper.createAlert(Alert.AlertType.CONFIRMATION, scene.getWindow(), "Confirm Close", "Confirm close? All data will be lost!").showAndWait();
 
-        if(result.get() == ButtonType.OK){
+        if(result.isPresent() && result.get() == ButtonType.OK){
             Platform.exit();
             System.exit(0);
         }else{
@@ -77,10 +88,10 @@ public class Main extends Application {
             }catch (IOException e){
                 System.out.println("Uh oh :( Something bad has happened!");
             }
-        }, 0, 5, TimeUnit.MINUTES);
+        }, 5, 5, TimeUnit.MINUTES);
     }
 
-    private void save() throws IOException {
+    public static void save() throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter("teams.json"));
         writer.write(gson.toJson(MainController.teams));
         writer.flush();

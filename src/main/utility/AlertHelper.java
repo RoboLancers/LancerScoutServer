@@ -6,7 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
 import javafx.stage.Window;
-import main.models.LancerMatch;
+import main.models.match.LancerMatch;
 
 public class AlertHelper {
     public static Alert showAlert(Alert.AlertType alertType, Window owner, String title, String message){

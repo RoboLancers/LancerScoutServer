@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="LancerScoutServer" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/models/match/AllianceColor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/models/match/LancerMatchBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/models/match/LancerTeam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/models/pit/Climb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/models/pit/CubeIntake.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/models/pit/Drivetrain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/models/pit/LancerPit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/models/pit/LancerPitBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/models/pit/ProgrammingLanguage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LancerScoutServer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LancerScoutServer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LancerScoutServer/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LancerScoutServer/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LancerScoutServer/main/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LancerScoutServer/main/controllers/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LancerScoutServer/main/models/AllianceColor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LancerScoutServer/main/models/AutonomousAttempt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LancerScoutServer/main/models/EndGameAttempt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LancerScoutServer/main/models/LancerMatch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LancerScoutServer/main/models/LancerTeam.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LancerScoutServer/main/models/StartingConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LancerScoutServer/main/utility/AlertHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LancerScoutServer/main/utility/AlertHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LancerScoutServer/main/utility/ProcessConnectionThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LancerScoutServer/main/utility/ProcessConnectionThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/models/AllianceColor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/models/AutonomousAttempt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/models/match/AutonomousAttempt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/models/EndGameAttempt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/models/match/EndGameAttempt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/models/LancerMatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/models/match/LancerMatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/models/LancerTeam.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/models/StartingConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/models/match/StartingConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/stylesheet/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/stylesheet/stylesheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/utility/AlertHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/utility/AlertHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/utility/ProcessConnectionThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/utility/ProcessConnectionThread.java" afterDir="false" />
+    </list>
+    <list id="46baa7e7-1cac-4bd2-8fec-bab6271c1bd5" name="Test" comment="Test" />
+    <ignored path="JavaFxApplication.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <ui_properties converted="true" />
+    <breakpoint_rules converted="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="JavaFxApplication" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="LancerTeam.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/models/match/LancerTeam.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/main.fxml">
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+          <provider editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="stylesheet.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/stylesheet/stylesheet.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1512">
+              <caret line="72" column="30" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/controllers/MainController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="326">
+              <caret line="247" selection-start-line="247" selection-end-line="247" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="609">
+              <caret line="54" column="32" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProcessConnectionThread.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/utility/ProcessConnectionThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2373">
+              <caret line="131" column="91" selection-start-line="131" selection-start-column="91" selection-end-line="131" selection-end-column="91" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaFXApplication" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>white</find>
+    </findStrings>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/AlertHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/Controller.java" />
+        <option value="$PROJECT_DIR$/lib/blue-alliance-api-java-library-1.2/src/main/java/com/thebluealliance/api/v3/models/SimpleEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/utility/Events.java" />
+        <option value="$PROJECT_DIR$/src/main/utility/Team.java" />
+        <option value="$PROJECT_DIR$/src/main/utility/listStyle.css" />
+        <option value="$PROJECT_DIR$/src/main/main.fxml" />
+        <option value="$PROJECT_DIR$/src/main/models/Events.java" />
+        <option value="$PROJECT_DIR$/src/main/models/Match.java" />
+        <option value="$PROJECT_DIR$/src/matchDetail.fxml" />
+        <option value="$PROJECT_DIR$/src/main/matchDetail.fxml" />
+        <option value="$PROJECT_DIR$/src/main/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/fxmls/matchDetail.fxml" />
+        <option value="$PROJECT_DIR$/src/main/controllers/MatchDetailController.java" />
+        <option value="$PROJECT_DIR$/src/main/models/TeamMatch.java" />
+        <option value="$PROJECT_DIR$/src/main/utility/BluetoothConnectionHelper.java" />
+        <option value="$PROJECT_DIR$/hs_err_pid9072.log" />
+        <option value="$PROJECT_DIR$/src/main/utility/WaitThread.java" />
+        <option value="$PROJECT_DIR$/src/main/fxmls/main.fxml" />
+        <option value="$PROJECT_DIR$/src/main/stylesheet/stylesheet.css" />
+        <option value="$PROJECT_DIR$/src/main/models/AllianceColor.java" />
+        <option value="$PROJECT_DIR$/src/main/models/AutonomousAttempt.java" />
+        <option value="$PROJECT_DIR$/src/main/models/EndGameAttempt.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/models/LancerMatch.java" />
+        <option value="$PROJECT_DIR$/src/main/models/LancerTeam.java" />
+        <option value="$PROJECT_DIR$/src/main/utility/Toast.java" />
+        <option value="$PROJECT_DIR$/src/main/models/pit/Climb.java" />
+        <option value="$PROJECT_DIR$/src/main/utility/AlertHelper.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/idea64.exe.vmoptions" />
+        <option value="$PROJECT_DIR$/src/main/utility/ProcessConnectionThread.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/main.fxml" />
+        <option value="$PROJECT_DIR$/src/main/models/match/LancerTeam.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/stylesheet/stylesheet.css" />
+        <option value="$PROJECT_DIR$/src/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/controllers/MainController.java" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="952" />
+    <option name="width" value="976" />
+    <option name="height" value="1038" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="LancerScoutServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LancerScoutServer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LancerScoutServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LancerScoutServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LancerScoutServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LancerScoutServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LancerScoutServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LancerScoutServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LancerScoutServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LancerScoutServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LancerScoutServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LancerScoutServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="match" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LancerScoutServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LancerScoutServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="pit" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LancerScoutServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LancerScoutServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LancerScoutServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LancerScoutServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="fxml" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LancerScoutServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LancerScoutServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="stylesheet" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="OverrideImplement.combined" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/jfoenix-8.0.4.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="recentsLimit" value="5" />
+    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\brian\Desktop\Projects\LancerScoutServer\src\main\resources\drawable" />
+      <recent name="C:\Users\brian\Desktop\Projects\LancerScoutServer\lib" />
+      <recent name="C:\Users\brian\Desktop\Projects\LancerScoutServer\src\main\fxml" />
+      <recent name="C:\Users\brian\Desktop\Projects\LancerScoutServer\src\main" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\brian\OneDrive\Projects\LancerScoutServer\src\main" />
+      <recent name="C:\Users\brian\Desktop\Projects\LancerScoutServer\src\main\models" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" singleton="true">
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
+      <module name="LancerScoutServer" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.utility.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+      <changelist id="46baa7e7-1cac-4bd2-8fec-bab6271c1bd5" name="Test" comment="" />
+      <created>1359379246138</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1359379246138</updated>
+      <workItem from="1359379250712" duration="1302000" />
+    </task>
+    <task id="LOCAL-00001" summary="Fix bug where program was not closing properly">
+      <created>1526689449740</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1526689449740</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Change addTeamButton to use lambda instead of another method">
+      <created>1526760946695</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1526760946695</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Remove TeamName from UI">
+      <created>1526776957986</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1526776957986</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Remove TeamName from UI">
+      <created>1526776989288</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1526776989288</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Tell clients that app is disconnecting">
+      <created>1526832626700</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1526832626700</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Shows matches for teams">
+      <created>1526858678069</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1526858678069</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Show match detail when double clicked on">
+      <created>1526861113730</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1526861113730</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add Icon to App">
+      <created>1526863174873</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1526863174873</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Actually add icon to app">
+      <created>1526863598674</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1526863598674</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Make it possible to open multiple match details">
+      <created>1526868092923</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1526868092923</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Take care of conflicted matches">
+      <created>1526872397125</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1526872397125</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Match scouting is almost done">
+      <created>1526952072749</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1526952072749</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Add auto save">
+      <created>1529022532765</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1529022532765</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Add confirm exit">
+      <created>1529082770820</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1529082770820</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1302000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32570806" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info id="Image Layers" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="5" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32893288" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.24916944" />
+      <window_info anchor="bottom" id="Terminal" order="13" weight="0.3278867" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Designer" order="2" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.20885417" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39756367" />
+      <window_info anchor="right" id="JetGradle" order="4" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.32551724" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32779622" />
+      <window_info anchor="bottom" id="Changes" order="7" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="bottom" id="Profiler" order="9" />
+      <window_info anchor="bottom" id="Problems" order="10" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Application Servers" order="12" />
+    </layout>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <MESSAGE value="Fix bug where program was not closing properly" />
+    <MESSAGE value="Change addTeamButton to use lambda instead of another method" />
+    <MESSAGE value="Remove TeamName from UI" />
+    <MESSAGE value="Tell clients that app is disconnecting" />
+    <MESSAGE value="Shows matches for teams" />
+    <MESSAGE value="Show match detail when double clicked on" />
+    <MESSAGE value="Add Icon to App" />
+    <MESSAGE value="Actually add icon to app" />
+    <MESSAGE value="Make it possible to open multiple match details" />
+    <MESSAGE value="Take care of conflicted matches" />
+    <MESSAGE value="Match scouting is almost done" />
+    <MESSAGE value="Add auto save" />
+    <MESSAGE value="Add confirm exit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add confirm exit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="10" />
+    </breakpoint-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/javafx-src.zip!/javafx/scene/control/ListView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="401" column="35" selection-start-line="401" selection-start-column="35" selection-end-line="401" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/utility/listStyle.css" />
+    <entry file="jar://$PROJECT_DIR$/lib/bluecove-2.1.1-SNAPSHOT.jar!/javax/microedition/io/StreamConnectionNotifier.class" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/io/InputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="99" column="15" selection-start-line="99" selection-start-column="15" selection-end-line="99" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/TBA Java APIv3.jar!/com/thebluealliance/api/v3/requests/EventRequest.class" />
+    <entry file="jar://$PROJECT_DIR$/lib/TBA Java APIv3.jar!/com/thebluealliance/api/v3/Deserializer.class" />
+    <entry file="jar://$PROJECT_DIR$/lib/TBA Java APIv3.jar!/com/thebluealliance/api/v3/models/Match.class" />
+    <entry file="jar://$PROJECT_DIR$/lib/TBA Java APIv3.jar!/com/thebluealliance/api/v3/models/SimpleMatch.class" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/util/function/Supplier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="47" column="6" selection-start-line="47" selection-start-column="6" selection-end-line="47" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/MatchDetail.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="2234" column="17" selection-start-line="2234" selection-start-column="17" selection-end-line="2234" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/models/LancerMatchBuilder.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/models/TeamMatch.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="462" column="11" selection-start-line="462" selection-start-column="11" selection-end-line="462" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/utility/BluetoothConnectionHelper.java" />
+    <entry file="jar://$PROJECT_DIR$/lib/bluecove-2.1.2.jar!/javax/bluetooth/UUID.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hs_err_pid9072.log" />
+    <entry file="file://$PROJECT_DIR$/hs_err_pid12672.log" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/jshell/jshell_console.snippet" />
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/MatchDetailController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/fxmls/matchDetail.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/main/models/AllianceColor.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/models/AutonomousAttempt.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/models/SingleMatch.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/models/EndGameAttempt.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/models/StartingConfiguration.java" />
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/util/AbstractCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="97" column="19" selection-start-line="97" selection-start-column="19" selection-end-line="97" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/models/LancerTeam.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/models/LancerMatch.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/utility/Toast.java" />
+    <entry file="file://$PROJECT_DIR$/teams.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teamInfo.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/models/match/LancerMatch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/utility/AlertHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/models/match/AllianceColor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/models/match/AutonomousAttempt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/models/match/EndGameAttempt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/models/pit/Climb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/models/pit/Drivetrain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/models/pit/CubeIntake.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/models/pit/LancerPit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/utility/WaitThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="635">
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/idea64.exe.vmoptions">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/utility/ProcessConnectionThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2373">
+          <caret line="131" column="91" selection-start-line="131" selection-start-column="91" selection-end-line="131" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/models/match/LancerTeam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/stylesheet/material-design-iconic-font.css" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/stylesheet/stylesheet.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1512">
+          <caret line="72" column="30" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="54" column="32" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/main.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="247" selection-start-line="247" selection-end-line="247" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>LancerScoutServer</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>LancerScoutServer</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>docs</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

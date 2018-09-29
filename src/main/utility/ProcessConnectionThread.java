@@ -1,16 +1,15 @@
 package main.utility;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonSyntaxException;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import main.Main;
 import main.controllers.MainController;
-import main.models.LancerMatch;
+import main.models.match.LancerMatch;
+import main.models.pit.LancerPit;
 
 import javax.microedition.io.StreamConnection;
 import java.io.ByteArrayOutputStream;
@@ -72,26 +71,29 @@ public class ProcessConnectionThread implements Runnable{
     private void processCommand(String data) {
 
         String command = "";
+        Gson gson = new Gson();
 
         if(data.length() > 5){
             if(data.substring(0, 5).equals("MATCH")){
                 command = data.substring(0, 5);
+            }else if(data.substring(0, 3).equals("PIT")){
+                command = data.substring(0, 3);
             }
         }
 
         switch (command) {
             case "MATCH":
                 try {
-                    String json = data.substring(5, data.length());
-                    System.out.println(json);
-                    Gson gson = new Gson();
+                    String json = data.substring(5);
                     LancerMatch lancerMatch = gson.fromJson(json, LancerMatch.class);
 
                     if(!MainController.teamInfo.containsKey(lancerMatch.getTeamNumber())){
-                        Platform.runLater(() -> MainController.teamInfo.put(lancerMatch.getTeamNumber(), FXCollections.observableArrayList(lancerMatch)));
+                        //Platform.runLater(() -> MainController.teamInfo.put(lancerMatch.getTeamNumber(), FXCollections.observableArrayList(lancerMatch)));
+                        Platform.runLater(() -> MainController.teamInfo.put(lancerMatch.getTeamNumber(), new ArrayList<>(Collections.singletonList(lancerMatch))));
                     }else{
                         Platform.runLater(() -> {
-                            ObservableList<LancerMatch> currentMatches = MainController.teamInfo.remove(lancerMatch.getTeamNumber());
+                            //ObservableList<LancerMatch> currentMatches = MainController.teamInfo.remove(lancerMatch.getTeamNumber());
+                            ArrayList<LancerMatch> currentMatches = MainController.teamInfo.remove(lancerMatch.getTeamNumber());
 
                             if(currentMatches.contains(lancerMatch)){
                                 LancerMatch duplicate = null;
@@ -102,18 +104,37 @@ public class ProcessConnectionThread implements Runnable{
                                     }
                                 }
 
-                                Optional<ButtonType> result = AlertHelper.createDuplicateMatchAlert(duplicate, lancerMatch, Main.scene.getWindow()).showAndWait();
-                                if(result.get() == ButtonType.OK){
-                                    int index = currentMatches.indexOf(lancerMatch);
-                                    currentMatches.remove(lancerMatch);
-                                    currentMatches.add(index, lancerMatch);
-                                }
+                                if(duplicate != null) {
+                                    Optional<ButtonType> result = AlertHelper.createDuplicateMatchAlert(duplicate, lancerMatch, Main.scene.getWindow()).showAndWait();
+                                    if (result.isPresent() && result.get() == ButtonType.OK) {
+                                        int index = currentMatches.indexOf(lancerMatch);
+                                        currentMatches.remove(lancerMatch);
+                                        currentMatches.add(index, lancerMatch);
+                                    }
 
-                                MainController.teamInfo.put(lancerMatch.getTeamNumber(), currentMatches);
+                                    MainController.teamInfo.put(lancerMatch.getTeamNumber(), currentMatches);
+                                }
                             }else {
                                 currentMatches.add(lancerMatch);
                                 MainController.teamInfo.put(lancerMatch.getTeamNumber(), currentMatches);
                             }
+                        });
+                    }
+                } catch (JsonSyntaxException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case "PIT":
+                try {
+                    String json = data.substring(3);
+                    LancerPit lancerPit = gson.fromJson(json, LancerPit.class);
+
+                    if (!MainController.pitInfo.containsKey(lancerPit.getTeamNumber())) {
+                        Platform.runLater(() -> MainController.pitInfo.put(lancerPit.getTeamNumber(), lancerPit));
+                    }else {
+                        Platform.runLater(() -> {
+                            MainController.pitInfo.remove(lancerPit.getTeamNumber());
+                            MainController.pitInfo.put(lancerPit.getTeamNumber(), lancerPit);
                         });
                     }
                 } catch (JsonSyntaxException e) {

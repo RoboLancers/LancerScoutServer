@@ -18,6 +18,8 @@
         <element id="module-output" name="LancerScoutServer" />
         <element id="extracted-dir" path="$PROJECT_DIR$/lib/bluecove-2.1.2.jar" path-in-jar="/" />
         <element id="extracted-dir" path="$PROJECT_DIR$/lib/gson-2.6.2.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$PROJECT_DIR$/lib/controlsfx-8.40.14.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$PROJECT_DIR$/lib/jfoenix-8.0.4.jar" path-in-jar="/" />
       </element>
     </root>
   </artifact>
